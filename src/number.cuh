@@ -26,10 +26,15 @@ public:
     MODS ~Number();
     MODS Number();
 
+    MODS UCH get(const UINT pos);
+    MODS void set(const UINT pos, const UCH value);
+
 private:
     MODS UINT _init(const UINT size);
     MODS UINT _resize(const UINT target);
 
-    UINT* _data;
+    MODS void _add(const char* data, const UINT size, const UINT pos);
+
+    UCH* _data;
     UINT _size;
 };

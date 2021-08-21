@@ -17,7 +17,8 @@
 //  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-#define  MODS  __host__ __device__
+#define  MODS  __device__
 
+typedef  unsigned char       UCH;
 typedef  unsigned int        UINT;
 typedef  unsigned long long  ULL;
