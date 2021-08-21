@@ -1,7 +1,7 @@
 //
-//  <PROJECT NAME>
-//  <PROJECT DESCRIPTION>
-//  Copyright <YOURNAME> <YEAR>
+//  Prime Find
+//  Mersenne prime search using CUDA.
+//  Copyright Patrick Huang 2021
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by

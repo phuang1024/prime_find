@@ -1,7 +1,7 @@
 #
-#  <PROJECT NAME>
-#  <PROJECT DESCRIPTION>
-#  Copyright <YOURNAME> <YEAR>
+#  Prime Find
+#  Mersenne prime search using CUDA.
+#  Copyright Patrick Huang 2021
 #
 #  This program is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -16,3 +16,15 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
+
+CXXFLAGS = -Wall -O3 -c -fPIC
+CUFLAGS = -Xptxas -O3 -use_fast_math -c -Xcompiler -fPIC
+
+all:
+	nvcc $(CUFLAGS) number.cu
+	nvcc $(CUFLAGS) search.cu
+	g++ $(CXXFLAGS) main.cpp
+
+	nvcc number.o search.o main.o -o a.out
+
+	rm *.o
