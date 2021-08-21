@@ -20,9 +20,16 @@
 #include "utils.cuh"
 
 
+/* Unbounded unsigned integer for CUDA. */
 class Number {
-    /* Unbounded unsigned integer for CUDA. */
-
+public:
     MODS ~Number();
     MODS Number();
+
+private:
+    MODS UINT _init(const UINT size);
+    MODS UINT _resize(const UINT target);
+
+    UINT* _data;
+    UINT _size;
 };
