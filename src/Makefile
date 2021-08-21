@@ -17,14 +17,8 @@
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-CXXFLAGS = -Wall -O3 -c -fPIC
-CUFLAGS = -Xptxas -O3 -use_fast_math -c -Xcompiler -fPIC
+CUFILES = main.cu number.cu search.cu
+CUFLAGS = -Xptxas -O3 -use_fast_math
 
 all:
-	nvcc $(CUFLAGS) number.cu
-	nvcc $(CUFLAGS) search.cu
-	g++ $(CXXFLAGS) main.cpp
-
-	nvcc number.o search.o main.o -o a.out
-
-	rm *.o
+	nvcc $(CUFILES) $(CUFLAGS) -o a.out

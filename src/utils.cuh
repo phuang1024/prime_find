@@ -17,12 +17,7 @@
 //  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-#include "utils.cuh"
+#define  MODS  __host__ __device__
 
-
-class Number {
-    /* Unbounded unsigned integer for CUDA. */
-
-    MODS ~Number();
-    MODS Number();
-};
+typedef  unsigned int        UINT;
+typedef  unsigned long long  ULL;
